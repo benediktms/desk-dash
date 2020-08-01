@@ -2,4 +2,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<% if user_signed_in? %>
+  <p>I'm signed in</p>
+<% else %>
+  <p>I'm not signed in yet</p>
+<% end %>
+
 <%= render 'shared/footer' %>
