@@ -1,11 +1,22 @@
 <%= render 'shared/navbar' %>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container my-5">
 
-<% if user_signed_in? %>
-  <p>I'm signed in</p>
-<% else %>
-  <p>I'm not signed in yet</p>
-<% end %>
+    <h1>Welcome to Desk Dash!</h1>
+    <p>Use us if your office sucks!</p>
+
+  <div class="row">
+    <div class="col">
+
+      <% if user_signed_in? %>
+        <p>Welcome back</p>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <button class="btn btn-dark">Sign in</button>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
 <%= render 'shared/footer' %>
