@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+
+<!--  need to find a logo-->
+  <div class="p-2 bd-highlight text-white">Logo goes here</div>
+
+  <div class="p-1 bd-highlight dropdown">
+
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-user-circle text-white" style="font-size: 30px"></i>
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
+
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <% else %>
+        <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
+        <%= link_to 'Register', new_user_registration_path, class: "dropdown-item" %>
+      <% end %>
+      <a class="dropdown-item" href="#">Upcoming bookings</a>
+      <a class="dropdown-item" href="#">Leave a review</a>
+
+    </div>
+
+  </div>
+
+</nav>
