@@ -1,7 +1,15 @@
 class SpacesController < ApplicationController
 
   def index
-    @spaces = Spaces.all
+    @spaces = Space.geocoded
+
+    @markers = @spaces.map do |space|
+      {
+        latitude: space.latitude,
+        longitude: space.longitude
+      }
+
+    end
   end
 
   def new
