@@ -1,8 +1,27 @@
 <%= render 'shared/navbar' %>
-<div class="container my-5">
 
-    <h1>Welcome to Desk Dash!</h1>
-    <p>Use us if your office sucks!</p>
+<div class="banner">
+  <div class="containter overflow-hidden">
+
+    <div class="row">
+      <div class="col col-md-3"></div>
+      <div class="col col-md-6 text-white py-5">
+
+        <h1 class="display-4">Welcome to Desk Dash</h1>
+        <p class="lead">Find your the workspace that's right for you</p>
+        <hr class="my-4">
+        <%= link_to spaces_path do %>
+          <button class="btn btn-secondary">Find a space now</button>
+        <% end %>
+
+      </div>
+      <div class="col col-md-3"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container my-5">
 
   <div class="row">
     <div class="col">
