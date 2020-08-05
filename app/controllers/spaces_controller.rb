@@ -5,10 +5,9 @@ class SpacesController < ApplicationController
 
     @markers = @spaces.map do |space|
       {
-        latitude: space.latitude,
-        longitude: space.longitude
+        longitude: space.longitude,
+        latitude: space.latitude
       }
-
     end
   end
 
