@@ -13,13 +13,13 @@ class SpacesController < ApplicationController
     if @space.save
       redirect_to space_path(@space)
     else
-      render "new"
+      render :new
     end
   end
 
   private
 
   def space_params
-    params.require(:space).permit(:name)
+    params.require(:space).permit(:name, :address, :longitude, :latitude)
   end
 end
