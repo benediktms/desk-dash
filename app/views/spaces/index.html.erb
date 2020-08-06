@@ -3,3 +3,23 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+
+<div class="container">
+  <% if @spaces.any? %>
+    <div class="row">
+      <% @spaces.each do |space| %>
+      <div class="col-md-4">
+        <%= link_to cocktail_path(space), action: 'go' do %>
+          <div class="space-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= space.photo%>'), height: 300, width: 300);">
+            <div class="space-name">
+              <%= space.name %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>There are no spaces available!</p>
+  <% end %>
+</div>
