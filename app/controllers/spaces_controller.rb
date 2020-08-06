@@ -13,11 +13,12 @@ class SpacesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def new
     @space = Space.new
+  end
+
+  # added by Bruno
+  def show
   end
 
   def create
@@ -29,10 +30,15 @@ class SpacesController < ApplicationController
     end
   end
 
+  def destroy
+    @space.destroy
+    redirect_to space_path(@space)
+  end
+
   private
 
   def space_params
-    params.require(:space).permit(:name, :address, :longitude, :latitude)
+    params.require(:space).permit(:name, :address, :price, :number_of_desks)
   end
 
   def set_space

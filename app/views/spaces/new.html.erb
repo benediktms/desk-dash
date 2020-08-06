@@ -1,0 +1,7 @@
+<%= simple_form_for @space do |f| %>
+<%= f.input :name %>
+<%= f.input :address %>
+<%= f.input :price %>
+<%= f.input :number_of_desks %>
+<%= f.submit "Confirm space creation", class: "btn btn-primary" %>
+<% end %>
