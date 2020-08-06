@@ -1,0 +1,13 @@
+<h2>Please find below all our spaces</h2>
+<h5>Click for more details</h5>
+
+<% @spaces.each do |space| %>
+      <%= link_to space.name, space_path(space) %>
+      <br>
+  <% end %>
+<br>
+<br>
+<%= link_to 'Click here to create a new space', new_space_path %>
+
+<br>
+  <%= link_to 'Back to home page', root_path %>

@@ -1,12 +1,15 @@
 
-<h1>Details of the space <%= @space.name %></h1>
+<h2> <%= @space.name %> key features </h2>
 
 
-<h2>price: <%= @space.price%></h2>
-<h2>number_of_desks: <%= @space.number_of_desks%></h2>
-<h2>address: <%space.address%></h2>
-
-
+<h4>price per day: <%= @space.price%></h4>
+<h4>number_of_desks: <%= @space.number_of_desks%></h4>
+<h4>address: <%= @space.address%></h4>
+<br>
+<%= link_to 'Book this space', new_booking_path %>
+<br>
+<%= link_to "Remove this space?", space_path(@space), method: :delete,  data: { confirm: "Are you sure?" } %>
+<br>
 <%= link_to 'Back to spaces list', spaces_path %>
 
 
