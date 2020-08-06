@@ -8,18 +8,17 @@
   <% if @spaces.any? %>
     <div class="row">
       <% @spaces.each do |space| %>
-      <div class="col-md-4">
-        <%= link_to cocktail_path(space), action: 'go' do %>
-          <div class="space-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= space.photo%>'), height: 300, width: 300);">
-            <div class="space-name">
-              <%= space.name %>
-            </div>
-          </div>
-        <% end %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag space.photo, :class => "card-img-top" %>
+        <div class="card-body">
+        <h5 class="card-title"> <%= space.name %> </h5>
+          <%= link_to "Check it out", space_path(space), :class => "btn btn-primary" %>
+        </div>
       </div>
-      <% end %>
+     <% end %>
     </div>
   <% else %>
     <p>There are no spaces available!</p>
   <% end %>
 </div>
+
