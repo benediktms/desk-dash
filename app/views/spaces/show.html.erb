@@ -1,12 +1,35 @@
+<div class="container">
 
-<h1>Details of the space <%= @space.name %></h1>
+  <div class="banner" style="background-image: url(<%= @space.photo %>)"></div>
+
+  <div class="row">
+    <div class="col col-md-2"></div>
+    <div class="col col-md-8">
+
+      <h1 class="py-5"><%= @space.name %></h1>
+
+      <p>price: <%= @space.price%></p>
+      <p>number of desks: <%= @space.number_of_desks%></p>
+      <p>address: <%= @space.address %></p>
+
+      <div class="row">
+
+          <button class="btn btn-primary mr-3">Book this space</button>
+
+          <%= link_to spaces_path do %>
+            <button class="btn btn-outline-secondary">Back to spaces</button>
+          <% end %>
+
+      </div>
+
+    </div>
+    <div class="col col-md-2"></div>
+  </div>
+
+</div>
 
 
-<h2>price: <%= @space.price%></h2>
-<h2>number_of_desks: <%= @space.number_of_desks%></h2>
-<h2>address: <%space.address%></h2>
 
 
-<%= link_to 'Back to spaces list', spaces_path %>
 
 
