@@ -3,3 +3,22 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+
+<div class="container">
+  <% if @spaces.any? %>
+    <div class="row">
+      <% @spaces.each do |space| %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag space.photo, :class => "card-img-top" %>
+        <div class="card-body">
+        <h5 class="card-title"> <%= space.name %> </h5>
+          <%= link_to "Check it out", space_path(space), :class => "btn btn-primary" %>
+        </div>
+      </div>
+     <% end %>
+    </div>
+  <% else %>
+    <p>There are no spaces available!</p>
+  <% end %>
+</div>
+
