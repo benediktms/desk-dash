@@ -1,0 +1,41 @@
+<%= render 'shared/navbar' %>
+
+<div class="banner" style="background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.5) 70%), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+  <div class="containter overflow-hidden">
+
+    <div class="row">
+      <div class="col col-md-3"></div>
+      <div class="col col-md-6 text-white py-5">
+
+        <h1 class="display-4">Welcome to Desk Dash</h1>
+        <p class="lead">Find your the workspace that's right for you</p>
+        <hr class="my-4">
+        <%= link_to spaces_path do %>
+          <button class="btn btn-secondary">Find a space now</button>
+        <% end %>
+
+      </div>
+      <div class="col col-md-3"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container my-5">
+
+  <div class="row">
+    <div class="col">
+
+      <% if user_signed_in? %>
+        <p>Welcome back</p>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <button class="btn btn-dark">Sign in</button>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
