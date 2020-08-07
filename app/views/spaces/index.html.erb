@@ -4,18 +4,18 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
-<div class="container">
+<div class="container my-3">
   <% if @spaces.any? %>
     <div class="row">
       <% @spaces.each do |space| %>
-      <div class="card" style="width: 18rem;">
-        <%= image_tag space.photo, :class => "card-img-top" %>
-        <div class="card-body">
-        <h5 class="card-title"> <%= space.name %> </h5>
-          <%= link_to "Check it out", space_path(space), :class => "btn btn-primary" %>
+        <div class="card mx-3 my-3" style="width: 18rem;">
+          <img class="card-img-top" src="<%= space.photo %>" alt="<%= space.name %>"/>
+          <div class="card-body">
+            <h5 class="card-title"><%= space.name %></h5>
+            <%= link_to "Check it out", space_path(space), class: "btn btn-primary" %>
+          </div>
         </div>
-      </div>
-     <% end %>
+      <% end %>
     </div>
   <% else %>
     <p>There are no spaces available!</p>
