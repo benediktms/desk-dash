@@ -24,6 +24,9 @@ class SpacesController < ApplicationController
 
   # added by Bruno
   def show
+    if params[:query].present?
+      params.delete :query
+    end
   end
 
   def create
