@@ -1,0 +1,6 @@
+<%= simple_form_for @booking do |f| %>
+<%= f.association :user %>
+<%= f.association :space %>
+<%= f.input :day %>
+<%= f.submit "Update booking", class: "btn btn-primary" %>
+<% end %>
