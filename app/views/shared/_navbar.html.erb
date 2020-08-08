@@ -1,6 +1,5 @@
 <nav class="navbar navbar-dark bg-dark d-flex justify-content-between sticky-top">
 
-<!--  need to find a logo-->
   <div class="p-2 bd-highlight text-white">
     <%= link_to root_path do %>
       <%= image_tag("desk-dash-logo.png", class: "logo") %>
@@ -9,10 +8,14 @@
 
   <div class="d-flex">
 
-    <form class="form-inline my-2 my-lg-0 mr-3">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <%= form_tag spaces_path, class: "form-inline my-2 my-lg-0 mr-3", method: :get do %>
+      <%= text_field_tag :query,
+                         params[:query],
+                         class: "form-control mr-sm-2",
+                         placeholder: "Search"
+      %>
+      <%= submit_tag "Search", class: "btn btn-outline-light my-2 my-sm-0" %>
+    <% end %>
 
     <div class="p-1 bd-highlight dropdown">
 
