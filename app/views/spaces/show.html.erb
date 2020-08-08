@@ -13,8 +13,9 @@
       <p>address: <%= @space.address %></p>
 
       <div class="row">
-
-          <button class="btn btn-primary mr-3">Book this space</button>
+          
+          <%= link_to "Book this space", new_booking_path, class: "btn btn-primary mr-3" %>
+          <%# <button class="btn btn-primary mr-3">Book this space</button> %>
 
           <%= link_to spaces_path do %>
             <button class="btn btn-outline-secondary">Back to spaces</button>
@@ -27,9 +28,3 @@
   </div>
 
 </div>
-
-
-
-
-
-
