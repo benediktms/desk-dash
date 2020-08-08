@@ -1,28 +1,33 @@
-<div class="container pt-4">
+<div class="container pt-2">
   <div class="row">
 
   <div class="container my-3 col-12 col-lg-4">
     <% if @spaces.any? %>
       <div class="row">
         <% @spaces.each do |space| %>
-          <div class="card mx-3 my-3 card" style="width: 18rem;">
-            <img class="card-img-top" src="<%= space.photo %>" alt="<%= space.name %>"/>
-            <div class="card-body">
-              <h5 class="card-title"><%= space.name %></h5>
-              <%= link_to "Check it out", space_path(space), class: "btn btn-primary" %>
+
+          <div class="card-product mx-3 my-3">
+            <img src="<%= space.photo %>" alt="">
+            <div class="card-product-infos">
+              <h2><%= space.name %></h2>
+              <p><%= space.price %></p>
+              <%= link_to "Check it out", space_path(space), class: "btn btn-primary btn-sm" %>
             </div>
           </div>
+
         <% end %>
+
       </div>
     <% else %>
       <p>There are no spaces available!</p>
     <% end %>
   </div>
 
-    <div id="map" class="col-12 col-lg-8 position-sticky"
-         style="width: 100%; height: 600px"
-         data-markers="<%= @markers.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+    <div class="col-12 col-lg-8 ">
+      <div id="map"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
  </div>
 </div>
