@@ -1,31 +1,42 @@
 <nav class="navbar navbar-dark bg-dark d-flex justify-content-between sticky-top">
 
-<!--  need to find a logo-->
   <div class="p-2 bd-highlight text-white">
     <%= link_to root_path do %>
       <%= image_tag("desk-dash-logo.png", class: "logo") %>
     <% end %>
   </div>
 
-  <div class="p-1 bd-highlight dropdown">
+  <div class="d-flex">
 
-    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i class="fas fa-user-circle text-white" style="font-size: 30px"></i>
-    </button>
+    <%= form_tag spaces_path, class: "form-inline my-2 my-lg-0 mr-3", method: :get do %>
+      <%= text_field_tag :query,
+                         params[:query],
+                         class: "form-control mr-sm-2",
+                         placeholder: "Search"
+      %>
+      <%= submit_tag "Search", class: "btn btn-outline-light my-2 my-sm-0" %>
+    <% end %>
 
-    <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
+    <div class="p-1 bd-highlight dropdown">
 
-      <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        <%= link_to 'View bookings', bookings_path, class: "dropdown-item" %>
-        <a class="dropdown-item" href="#">Leave a review</a>
-      <% else %>
-        <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
-        <%= link_to 'Register', new_user_registration_path, class: "dropdown-item" %>
-      <% end %>
+      <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle text-white" style="font-size: 30px"></i>
+      </button>
+
+      <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
+
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= link_to 'View bookings', bookings_path, class: "dropdown-item" %>
+          <a class="dropdown-item" href="#">Leave a review</a>
+        <% else %>
+          <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
+          <%= link_to 'Register', new_user_registration_path, class: "dropdown-item" %>
+        <% end %>
+
+      </div>
 
     </div>
-
   </div>
 
 </nav>

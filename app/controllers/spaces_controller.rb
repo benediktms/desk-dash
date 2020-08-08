@@ -3,7 +3,11 @@ class SpacesController < ApplicationController
   before_action :space_params, only: :create
 
   def index
-    @spaces = Space.geocoded
+    if params[:query].present?
+      @spaces = Space.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @spaces = Space.geocoded
+    end
 
     @markers = @spaces.map do |space|
       {
