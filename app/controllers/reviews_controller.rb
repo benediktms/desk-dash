@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  # before_action :find_space, except: [:destroy]
   before_action :find_space
 
   def new
