@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :find_space , except: [:destroy]
-
+  # before_action :find_space, except: [:destroy]
+  before_action :find_space
 
   def new
     @review = Review.new
@@ -16,11 +16,10 @@ class ReviewsController < ApplicationController
     end
   end
 
-
   def destroy
-    @review = Review.find(params[:id].to_i)
+    @review = Review.find(params[:id])
     @review.destroy
-    redirect_to spaces_path(@review.space)
+    redirect_to space_path(@space)
   end
 
   private

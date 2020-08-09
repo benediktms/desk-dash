@@ -20,6 +20,20 @@
             <button class="btn btn-outline-secondary">Back to spaces</button>
           <% end %>
 
+        <%= link_to "Add a review", new_space_review_path(@space) %>
+
+      </div>
+
+      <div class="row pt-5 flex-column">
+
+        <% if user_signed_in? %>
+          <% @space.reviews.each do |review| %>
+            <p><%=review.content %></p>
+            <%= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
+            <hr>
+          <% end %>
+        <% end %>
+
       </div>
 
     </div>
@@ -27,16 +41,6 @@
   </div>
 
 </div>
-
-<% @space.reviews.each do |review| %>
-  <p><%=review.content %></p>
-  <%= link_to 'Delete', space_review_path(review), method: :delete %>
-  <hr>
-<% end %>
-
-<%= link_to 'Back', spaces_path %> |
-<%= link_to "Add a review", new_space_review_path(@space) %>
-
 
 
 
