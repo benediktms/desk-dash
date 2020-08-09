@@ -17,10 +17,6 @@ class BookingsController < ApplicationController
 
   def create
       @booking = Booking.new(booking_params)
-      @user = User.find(params[:user_id])
-      @booking.user = @user
-      @Space = Space.find(params[:space_id])
-      @booking.space = @space
         if @booking.save
       flash.alert = 'Booking created successfully'
       redirect_to bookings_path
@@ -31,9 +27,11 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       flash.alert = 'Booking updated successfully'
       redirect_to bookings_path
@@ -47,6 +45,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     if @booking.destroy
       flash.notice = 'Booking deleted successfully'
+      redirect_to bookings_path
     else
       flash.notice = 'There was an error deleting your booking'
     end
