@@ -1,6 +1,7 @@
 class SpacesController < ApplicationController
   before_action :set_space, only: :show
   before_action :space_params, only: :create
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:query].present?
