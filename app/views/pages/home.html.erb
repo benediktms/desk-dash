@@ -1,5 +1,3 @@
-<%#= render 'shared/navbar' %>
-
 <div class="banner" style="background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.5) 70%), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
   <div class="containter overflow-hidden">
 
@@ -24,7 +22,7 @@
 
 <div class="container my-5">
 
-  <div class="row">
+  <div class="row align-items-center">
     <div class="col col-md-1"></div>
 
     <div class="col col-md-5 col-sm-10 my-5">
@@ -54,17 +52,17 @@
 
     </div>
 
-    <div class="col"></div>
+    <div class="col col-md-1"></div>
 
   </div>
 
     <hr>
 
-  <div class="row">
+  <div class="row align-items-center">
 
     <div class="col col-md-1"></div>
 
-    <div class="col col-md-5 col-sm10 my-5">
+    <div class="col col-md-5 col-sm-10 my-5">
 
       <img src="https://images.unsplash.com/photo-1558959356-878a1a39e824?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
                 alt="happy offic people"
@@ -74,7 +72,7 @@
 
      </div>
 
-    <div class="col col-md-5 col-sm10 my-5">
+    <div class="col col-md-5 col-sm-10 my-5">
 
       <h2>Safe workspaces for everyone</h2>
       <p>We are passionate about providing everyone with a safe working environemnt. We make it our mission to work with our partners to ensure all office spaces are cleaned and disinfected reguarly, provide sanitizers and always stock cleaning equimpent.</p>
@@ -85,6 +83,21 @@
      <div class="col col-md-1"></div>
 
   </div>
-</div>
 
-<%#= render 'shared/footer' %>
+  <div class="row align-items-center">
+
+    <div class="col col-md-1"></div>
+
+    <div class="col col-sm-10 my-5">
+    <h2 class="text-center">Featured work spaces</h2>
+
+    <%# TODO: select random space records from database %>
+
+    </div>
+
+    <div class="col col-md-1"></div>
+
+  </div>
+
+
+</div>
