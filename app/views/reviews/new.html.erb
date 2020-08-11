@@ -1,11 +1,17 @@
+<!--find the index of the currently selected star -->
+<!--map a new empty array/range to get the individual indicies-->
+<!--for each index, fill in the relevant star-->
+
 <%= simple_form_for [ @space, @review ] do |f| %>
-  <%# <%= f.input :rating, collection: 1..5 %>
+  <%= f.input :rating, as: :radio_buttons, collection: [1, 2, 3, 4, 5] %>
   <%= f.label :rating %>
-  <span id="1-star" class="fa fa-star checked"></span>
-  <span id="2-star" class="fa fa-star checked"></span>
-  <span id="3-star" class="fa fa-star checked"></span>
-  <span id="4-star" class="fa fa-star"></span>
-  <span id="5-star" class="fa fa-star"></span>
+  <ul id="star-list" class="list-inline">
+    <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+    <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+    <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+    <li class="list-inline-item"><span class="fa fa-star"></span></li>
+    <li class="list-inline-item"><span class="fa fa-star"></span></li>
+  </ul>
   <%= f.input :content %>
   <%= f.submit "Submit review", class: 'btn btn-primary' %>
 <% end %>
