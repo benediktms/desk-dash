@@ -1,23 +1,43 @@
 <%#= render 'shared/navbar' %>
+<div class="container">
+  <div class="row">
 
-<div class="banner" style="background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.5) 70%), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
-  <div class="containter overflow-hidden">
-
-    <div class="row">
-      <div class="col col-md-3"></div>
-      <div class="col col-md-6 text-white py-5">
-
-        <h1 class="display-4">Welcome to Desk Dash</h1>
-        <p class="lead">Find your the workspace that's right for you</p>
-        <hr class="my-4">
-        <%= link_to spaces_path do %>
-          <button class="btn btn-secondary">Find a space now</button>
-        <% end %>
-
+    <div id="carouselExampleSlidesOnly" class="carousel slide pt-5" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="d-block w-75" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1505232631822-65821c2d91bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="d-block w-75" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1527792492728-08d07d011113?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="d-block w-75" alt="...">
+        </div>
       </div>
-      <div class="col col-md-3"></div>
+    </div>
+  </div>
+
+    <div class="content">
+      <div class="cards">
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1486122741729-1a39ece53a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
+          East London
+        </div>
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1557227065-0e8556bb4128?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1760&q=80)">
+          West London
+        </div>
+      </div>
     </div>
 
+</div>
+
+<div class="content">
+  <div class="cards">
+    <div class="card" style="background-image: url(https://images.unsplash.com/photo-1486122741729-1a39ece53a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
+      East London
+    </div>
+    <div class="card" style="background-image: url(https://images.unsplash.com/photo-1557227065-0e8556bb4128?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1760&q=80)">
+      West London
+    </div>
   </div>
 </div>
 
