@@ -29,4 +29,3 @@ const getIndex = (node) => {
   }
   return i;
 };
-
