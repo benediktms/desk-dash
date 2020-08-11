@@ -33,7 +33,7 @@ sally = User.new({
 sally.save
 
 space1 = Space.new({
-                       name: 'WeWork Aviation House',
+                       name: 'WeWork - Aviation House',
                        photo: 'https://images.unsplash.com/photo-1540821924489-7690c70c4eac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1291&q=80',
                        address: 'Aviation House, 125 Kingsway, Holborn, London WC2B 6NH',
                        user_id: 1,
@@ -45,7 +45,7 @@ space1 = Space.new({
 space1.save
 
 space2 = Space.new({
-                       name: 'WeWork 21 Soho Square',
+                       name: 'WeWork - 21 Soho Square',
                        photo: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' ,
                        address: '21 Soho Square, Soho, London W1D 3QP',
                        user_id: 1,
@@ -57,7 +57,7 @@ space2 = Space.new({
 space2.save
 
 space3 = Space.new({
-                       name: 'WeWork The Cursitor',
+                       name: 'WeWork - The Cursitor',
                        photo: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
                        address: '38 Chancery Lane London WC2A 1EN',
                        user_id: 1,
@@ -69,7 +69,7 @@ space3 = Space.new({
 space3.save
 
 space4 = Space.new({
-                       name: 'WeWork Aldwych House',
+                       name: 'WeWork - Aldwych House',
                        photo: 'https://images.unsplash.com/photo-1533750446969-255bbf191920?ixlib=rb-1.2.1&auto=format&fit=crop&w=1324&q=80',
                        address: 'Aldwych House, 71-91 Aldwych, Holborn, London WC2B 4HN',
                        user_id: 1,
@@ -81,7 +81,7 @@ space4 = Space.new({
 space4.save
 
 space5 = Space.new({
-                       name: 'WeWork 123 Buckingham Palace',
+                       name: 'WeWork - Buckingham Palace',
                        photo: 'https://images.unsplash.com/photo-1542089078-9086d071d8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
                        address: '123 Buckingham Palace Rd, Victoria, London SW1W 9SH',
                        user_id: 1,
@@ -93,7 +93,7 @@ space5 = Space.new({
 space5.save
 
 space6 = Space.new({
-                       name: 'WeWork Medius House',
+                       name: 'WeWork - Medius House',
                        photo: 'https://images.unsplash.com/photo-1560821630-1a7c45c3286e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
                        address: '2 Sheraton St Medius House, London W1F 8BH',
                        user_id: 1,
