@@ -20,8 +20,12 @@
       <% end %>
     </div>
   <% else %>
+
+  <div class="container w-50 p-3 mb-2 bg-light text-dark".bg-light>
     <p>You currently have no bookings!</p>
+  <%= link_to 'Back to spaces list', spaces_path, class: "btn btn-primary" %>
   <% end %>
+  </div>
 </div>
 
-<%= link_to 'Back to spaces list', spaces_path, class: "btn btn-primary" %>
+
