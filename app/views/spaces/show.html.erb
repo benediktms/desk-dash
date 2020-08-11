@@ -21,21 +21,22 @@
             <button class="btn btn-outline-secondary">Back to spaces</button>
           <% end %>
 
-        <%= link_to "Add a review", new_space_review_path(@space) %>
-
       </div>
 
       <div class="row pt-5 flex-column">
 
-      <% @space.reviews.each do |review| %>
-        <%# <%= <span class="fa fa-star checked"></span> * review.rating %>
-        <% review.rating.to_i.times do %>
-          <span class="fa fa-star checked"></span>
-        <% end %>
-        <p><%=review.content %></p>
-        <%= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
-        <hr>
-      <% end %>
+        <%= link_to "Add a review", new_space_review_path(@space), class: "mb-3" %>
+
+        <div class="d-felx">
+          <% @space.reviews.each do |review| %>
+            <% review.rating.to_i.times do %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+            <p><%=review.content %></p>
+            <%= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
+            <hr>
+          <% end %>
+        </div>
 
       </div>
 

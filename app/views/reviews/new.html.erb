@@ -1,13 +1,6 @@
 <%= simple_form_for [ @space, @review ] do |f| %>
-  <%= f.input :rating, collection: (1..5), as: :radio_buttons, wrapper: :vertical_collection_inline %>
-  <%# <%= f.label :rating %>
-  <!-- <ul id="star-list" class="list-inline">
-    <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
-    <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
-    <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
-    <li class="list-inline-item"><span class="fa fa-star"></span></li>
-    <li class="list-inline-item"><span class="fa fa-star"></span></li>
-  </ul> -->
+
+  <%= f.input :rating, collection: (1..5).to_a %>
   <%= f.input :content %>
 
   <%= f.submit "Submit review", class: 'btn btn-primary' %>
