@@ -56,7 +56,7 @@
 
   </div>
 
-    <hr>
+  <hr>
 
   <div class="row align-items-center">
 
@@ -84,14 +84,30 @@
 
   </div>
 
+  <hr>
+
   <div class="row align-items-center">
 
     <div class="col col-md-1"></div>
 
     <div class="col col-sm-10 my-5">
+
     <h2 class="text-center">Featured work spaces</h2>
 
-    <%# TODO: select random space records from database %>
+    <div class="d-flex justify-content-center my-3">
+      <% featured_spaces.each do |space| %>
+
+        <div class="card mx-3 mt-3" style="width: 18rem;">
+          <img src="<%= space.photo %>%" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><%= space.name %></h5>
+            <%= link_to "More info", space_path(space), class: "btn btn-primary" %>
+
+          </div>
+        </div>
+
+      <% end %>
+    </div>
 
     </div>
 
@@ -99,5 +115,6 @@
 
   </div>
 
+  <hr>
 
 </div>
