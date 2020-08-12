@@ -31,18 +31,7 @@
   padding: 16px;
 }
 
-.card-img-top {
+.card-image-size {
   height:125px;
-}
-
-.card-title {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 15px;
-  font-weight: 100;
-}
-
-.card-body {
-  flex: 1 1 auto;
-  min-height: 1px;
-  padding: 1 rem;
+  object-fit: cover;
 }
