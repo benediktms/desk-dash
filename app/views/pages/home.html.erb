@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="col col-md-5 col-sm 10">
+    <div class="col col-md-5 col-sm-10">
 
       <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
            alt="happy offic people"
@@ -90,23 +90,23 @@
 
     <div class="col col-md-1"></div>
 
-    <div class="col col-sm-10 my-5">
+    <div class="col col-sm-12 my-md-5">
 
-    <h2 class="text-center">Featured work spaces</h2>
+      <h2 class="text-center">Featured work spaces</h2>
 
-    <div class="d-flex justify-content-center my-3">
-      <% featured_spaces.each do |space| %>
+      <div class="d-flex justify-content-center my-3">
+        <% featured_spaces.each do |space| %>
 
-        <div class="card mx-3 mt-3" style="width: 18rem;">
-          <img src="<%= space.photo %>%" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title"><%= space.name %></h5>
-            <%= link_to "More info", space_path(space), class: "btn btn-primary" %>
+          <div class="card mx-md-3 mx-sm-1 mt-3" style="width: 18rem;">
+            <img src="<%= space.photo %>%" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title"><%= space.name %></h5>
+              <%= link_to "More info", space_path(space), class: "btn btn-primary" %>
 
+            </div>
           </div>
-        </div>
 
-      <% end %>
+        <% end %>
     </div>
 
     </div>
@@ -116,5 +116,50 @@
   </div>
 
   <hr>
+
+  <div class="row align-items-center">
+
+    <div class="col col-md-1"></div>
+
+    <div class="col col-sm-10 my-5">
+
+    <h2 class="text-center">Premium work environements</h2>
+
+    <div class="d-flex flex-column justify-content-center my-3">
+
+      <div class="row mt-3">
+        <div class="col col-2">
+          <i class="fas fa-wifi" style="font-size: 50px"></i>
+        </div>
+        <div class="col">
+          <p>The digital age is now, and fast, reliable internet is a necessity for most jobs these days. Therefore we strive to ensure that all the wrokspaces listed offer super fast fiber optice broadband included in your rental.</p>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col col-2">
+          <i class="fas fa-mug-hot" style="font-size: 50px"></i>
+        </div>
+        <div class="col">
+          <p>We know how important a good coffe is to start your day. Most of our partners offer some form of catering which is included in your rental, however if you work in a location that does not offer this, we will ensure that you get a free coffe on us!</p>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col col-2">
+          <i class="fas fa-desktop" style="font-size: 50px"></i>
+        </div>
+        <div class="col">
+          <p>We pride ourselves in offering work spaces to people from all sorts of backgrounds doing many all sorts of work. However one thing that is universally important no matter what ionudtry you work in is good screen equipment. We ensure that all our partner offer at least 1 external monitor and height adjustable office chair.</p>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="col col-md-1"></div>
+
+  </div>
 
 </div>
