@@ -1,10 +1,10 @@
-<div class="container">
+<div class="banner" style="background-image: url(<%= @space.photo %>)"></div>
 
-  <div class="banner" style="background-image: url(<%= @space.photo %>)"></div>
+  <div class="container">
 
   <div class="row">
     <div class="col col-md-2"></div>
-    <div class="col col-md-8">
+    <div class="col col-md-8 col-sm-10">
 
       <h1 class="py-5"><%= @space.name %></h1>
 
@@ -13,7 +13,7 @@
       <p>address: <%= @space.address %></p>
 
       <div class="row">
-          
+
           <%= link_to "Book this space", new_booking_path, class: "btn btn-primary mr-3" %>
           <%# <button class="btn btn-primary mr-3">Book this space</button> %>
 
