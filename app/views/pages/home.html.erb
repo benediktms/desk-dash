@@ -36,7 +36,7 @@
         <% end %>
        <% else %>
        <%= link_to spaces_path do %>
-          <button class="btn btn-primary">Explore available spaces</button>
+          <button class="btn btn-primary" data-turbolinks="false">Explore available spaces</button>
        <% end %>
       <% end %>
 
@@ -152,6 +152,12 @@
         <div class="col">
           <p>We pride ourselves in offering work spaces to people from all sorts of backgrounds doing many all sorts of work. However one thing that is universally important no matter what ionudtry you work in is good screen equipment. We ensure that all our partner offer at least 1 external monitor and height adjustable office chair.</p>
         </div>
+      </div>
+
+      <div class="row mt-5 justify-content-center">
+      <%= link_to spaces_path do %>
+        <button class="btn btn-primary" data-turbolinks="false">Book a space now</button>
+      <% end %>
       </div>
 
     </div>
