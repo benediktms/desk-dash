@@ -1,28 +1,37 @@
 <div class="container my-3">
+  <h2>Your upcoming bookings</h2>
   <% if @bookings.any? %>
     <div class="row">
       <% @bookings.each do |booking| %>
         <div class="card mx-3 my-3" style="width: 18rem;">
           <img class="card-image-size" src="<%= booking.space.photo %>" alt="<%= booking.space.name %>"/>
           <div class="card-body">
-            
-            
+              
              <p><%= booking.day %> </p>
              <h5> <%= booking.space.name %> </h5>
              <p> Booking number <%= booking.id %> </p>
-          <p><%= booking.space.address %> </p>
+             <p><%= booking.space.address %> </p>
+            
           </div>
-             <div class="d-flex justify-content-around">
+
+           <div class="d-flex justify-content-around">
+             
               <%= link_to "Update", edit_booking_path(booking), class: "btn btn-outline-secondary mb-2" %>
               <%= link_to "Delete", booking_path(booking), method: :delete,  data: { confirm: "Are you sure?" }, class: "btn btn-outline-secondary mb-2" %>
-            </div>
+
+           </div>
         </div>
       <% end %>
     </div>
   <% else %>
+
+  <div class="container w-50 p-3 mb-2 bg-light text-dark".bg-light>
     <p>You currently have no bookings!</p>
+  <%= link_to 'Back to spaces list', spaces_path, class: "btn btn-primary" %>
   <% end %>
+  </div>
 </div>
+
 <div class="d-flex justify-content-center">
 <%= link_to 'Back to spaces list', spaces_path, class: "btn btn-outline-secondary" %>
 </div>
