@@ -1,9 +1,19 @@
-<div class="container w-50 p-3 mb-2 bg-light text-dark".bg-light>
-  <%= simple_form_for @booking do |f| %>
-  <%= f.association :user %>
-  <%= f.association :space %>
-  <%= f.input :day %>
-  <%= f.submit "Update booking", class: "btn btn-primary" %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
 
+<%= simple_form_for @booking do |f| %>
+ <div class="row justify-content-center"></div>
+<%= f.association :user %>
+ <div class="row justify-content-center"></div>
+<%= f.association :space %>
+ <div class="row justify-content-center"></div>
+<%= f.input :day %>
+ <div class="d-flex justify-content-center">
+<%= f.submit "Update booking", class: "btn btn-outline-secondary" %>
+</div>
+<% end %>
+
+   </div>
+  </div>
 </div>

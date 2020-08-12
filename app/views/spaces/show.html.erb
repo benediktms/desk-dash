@@ -13,13 +13,30 @@
       <p>address: <%= @space.address %></p>
 
       <div class="row">
-          
+
           <%= link_to "Book this space", new_booking_path, class: "btn btn-primary mr-3" %>
           <%# <button class="btn btn-primary mr-3">Book this space</button> %>
 
           <%= link_to spaces_path do %>
             <button class="btn btn-outline-secondary">Back to spaces</button>
           <% end %>
+
+      </div>
+
+      <div class="row pt-5 flex-column">
+
+        <%= link_to "Add a review", new_space_review_path(@space), class: "mb-3" %>
+
+        <div class="d-felx">
+          <% @space.reviews.each do |review| %>
+            <% review.rating.to_i.times do %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+            <p><%=review.content %></p>
+            <%= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
+            <hr>
+          <% end %>
+        </div>
 
       </div>
 
