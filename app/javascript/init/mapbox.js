@@ -3,7 +3,6 @@ import mapboxgl from 'mapbox-gl';
 const mapElement = document.getElementById('map');
 
 export const initMapbox = () => {
-
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -15,7 +14,7 @@ export const initMapbox = () => {
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
-    container: 'map',
+    container: mapElement,
     style: 'mapbox://styles/mapbox/streets-v11'
   });
 };
@@ -23,7 +22,6 @@ const buildMap = () => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-
     new mapboxgl.Marker()
       .setLngLat([ marker.longitude, marker.latitude ])
       .setPopup(popup)

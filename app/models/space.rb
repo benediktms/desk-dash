@@ -13,5 +13,4 @@ class Space < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
-
 end
