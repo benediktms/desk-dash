@@ -106,7 +106,7 @@
 
       <div class="row">
 
-          <%= link_to "Book this space", new_booking_path, class: "btn btn-primary mr-3" %>
+          <%= link_to "Book this space", new_booking_path, class: "btn btn-secondary mr-3" %>
           <%= link_to spaces_path do %>
             <button class="btn btn-outline-secondary">Back to spaces</button>
           <% end %>
@@ -115,7 +115,7 @@
 
       <div class="row pt-5 flex-column">
 
-        <%= link_to "Add a review", new_space_review_path(@space), class: "mb-3" %>
+        <%= link_to "Add a review", new_space_review_path(@space), class: "mr-3" %>
 
         <div class="d-felx">
           <% @space.reviews.each do |review| %>
