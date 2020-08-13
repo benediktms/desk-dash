@@ -115,16 +115,19 @@
 
       <div class="row pt-5 flex-column">
 
+        <h2>See what others are saying about this work space</h2>
         <%= link_to "Add a review", new_space_review_path(@space), class: "mb-3" %>
 
-        <div class="d-felx">
+        <div class="d-felx mb-5">
           <% @space.reviews.each do |review| %>
-            <% review.rating.to_i.times do %>
-              <span class="fa fa-star checked"></span>
-            <% end %>
-            <p><%=review.content %></p>
-            <%= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
-            <hr>
+            <div class="review-content p-3 shadow my-4">
+              <% review.rating.to_i.times do %>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+              <p><%=review.content %></p>
+            </div>
+            <%#= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
+<!--            <hr>-->
           <% end %>
         </div>
 

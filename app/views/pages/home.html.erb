@@ -100,7 +100,7 @@
         <% featured_spaces.each do |space| %>
 
           <div class="card mx-md-3 mx-sm-1 mt-3" style="width: 18rem;">
-            <img src="<%= space.photo %>%" class="card-img-top">
+            <img src="<%= space.photo %>%" class="card-img-top card-image-size image-large">
             <div class="card-body">
               <h5 class="card-title"><%= space.name %></h5>
               <%= link_to "More info", space_path(space), class: "btn btn-primary" %>
