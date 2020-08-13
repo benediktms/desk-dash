@@ -91,12 +91,16 @@
           </div>
         <% end %>
 
-        <div class="row mt-3 align-items-center">
-          <div class="col">
-            <h4>See what others have said about this space</h4>
-            <p></p>
-          </div>
-        </div>
+<!--        <div class="row mt-3 align-items-center">-->
+<!--          <div class="col">-->
+<!--            <h4>See what others have said about this space</h4>-->
+            <%# @space.reviews.each do |review| %>
+<!--              <p><%#=review.content %></p>-->
+              <%#= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
+<!--              <hr>-->
+            <%# end %>
+<!--          </div>-->
+<!--        </div>-->
 
       </div>
 
