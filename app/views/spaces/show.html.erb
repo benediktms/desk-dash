@@ -20,15 +20,12 @@
           <div class="card mt-3 mb-5">
             <div class="card-body">
               <div class="card-text">
-                <p>Price: <i class="fas fa-pound-sign"></i><%= @space.price %></p>
+                <p>Price: <i class="fas"></i><%= @space.price %></p>
                 <p>Desks available: <%= @space.number_of_desks %></p>
+                <p><%= @space.address %></p>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="col">
-          <p><%= @space.address %></p>
         </div>
 
       </div>
@@ -106,7 +103,7 @@
 
       <div class="row">
 
-          <%= link_to "Book this space", new_booking_path, class: "btn btn-primary mr-3" %>
+          <%= link_to "Book this space", new_booking_path, class: "btn btn-secondary mr-3" %>
           <%= link_to spaces_path do %>
             <button class="btn btn-outline-secondary">Back to spaces</button>
           <% end %>
@@ -117,6 +114,7 @@
 
         <h2>See what others are saying about this work space</h2>
         <%= link_to "Add a review", new_space_review_path(@space), class: "mb-3" %>
+
 
         <div class="d-felx mb-5">
           <% @space.reviews.each do |review| %>
