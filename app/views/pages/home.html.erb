@@ -1,16 +1,18 @@
-<div class="banner" style="background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.5) 70%), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+<div class="banner" style="background-image: linear-gradient(354deg, rgba(179,174,238,0.6964986678265056) 0%, rgba(148,187,233,1) 100%), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')">
+
   <div class="containter overflow-hidden">
 
     <div class="row">
       <div class="col col-md-3"></div>
-      <div class="col col-md-6 text-white py-5">
+      <div class="col col-md-6 col-sm-10 text-white py-5">
 
         <h1 class="display-4">Welcome to Desk Dash</h1>
-        <p class="lead">Find your the workspace that's right for you</p>
+        <p class="lead">Find your the workspace that's right for you.</p>
+        <p>We are proud to say we are the UK's leading provider in premium office co-working spaces. Start your day right and book a space with Desk-Dash today.</p>
         <hr class="my-4">
 
         <%= link_to spaces_path do %>
-          <button class="btn btn-secondary" data-turbolinks="false">Find a space now</button>
+          <button class="btn btn-primary" data-turbolinks="false">Find a space now</button>
         <% end %>
 
       </div>
@@ -22,17 +24,150 @@
 
 <div class="container my-5">
 
-  <div class="row">
-    <div class="col">
+  <div class="row align-items-center">
+    <div class="col col-md-1"></div>
 
-      <% if user_signed_in? %>
-        <p>Welcome back</p>
-      <% else %>
+    <div class="col col-md-5 col-sm-10 my-5">
+
+      <h2>Finding a better solution for office working</h2>
+      <p>Desk-Dash is commited to offering a premuim office experience for those that need to travel, remote workers that want to have a dedicated working environement or for those who really just want to feel good when they work.</p>
+
+      <% if !user_signed_in? %>
         <%= link_to new_user_session_path do %>
           <button class="btn btn-dark">Sign in</button>
         <% end %>
+       <% else %>
+       <%= link_to spaces_path do %>
+          <button class="btn btn-primary" data-turbolinks="false">Explore available spaces</button>
+       <% end %>
       <% end %>
 
     </div>
+
+    <div class="col col-md-5 col-sm-10">
+
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+           alt="happy offic people"
+           width="100%"
+           class="shadow rounded"
+           >
+
+    </div>
+
+    <div class="col col-md-1"></div>
+
   </div>
+
+  <hr>
+
+  <div class="row align-items-center">
+
+    <div class="col col-md-1"></div>
+
+    <div class="col col-md-5 col-sm-10 my-5">
+
+      <img src="https://images.unsplash.com/photo-1558959356-878a1a39e824?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                alt="happy offic people"
+                width="100%"
+                class="shadow rounded"
+              >
+
+     </div>
+
+    <div class="col col-md-5 col-sm-10 my-5">
+
+      <h2>Safe workspaces for everyone</h2>
+      <p>We are passionate about providing everyone with a safe working environemnt. We make it our mission to work with our partners to ensure all office spaces are cleaned and disinfected reguarly, provide sanitizers and always stock cleaning equimpent.</p>
+      <p>Our premium partners also offer state fo the art ergonomic equimpent to help you stay as healthy as possible when you're working long hours.</p>
+
+    </div>
+
+     <div class="col col-md-1"></div>
+
+  </div>
+
+  <hr>
+
+  <div class="row align-items-center">
+
+    <div class="col col-md-1"></div>
+
+    <div class="col col-sm-12 my-md-5">
+
+      <h2 class="text-center">Featured work spaces</h2>
+
+      <div class="d-flex justify-content-center my-3">
+        <% featured_spaces.each do |space| %>
+
+          <div class="card mx-md-3 mx-sm-1 mt-3" style="width: 18rem;">
+            <img src="<%= space.photo %>%" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title"><%= space.name %></h5>
+              <%= link_to "More info", space_path(space), class: "btn btn-primary" %>
+
+            </div>
+          </div>
+
+        <% end %>
+    </div>
+
+    </div>
+
+    <div class="col col-md-1"></div>
+
+  </div>
+
+  <hr>
+
+  <div class="row align-items-center">
+
+    <div class="col col-md-1"></div>
+
+    <div class="col col-sm-10 my-5">
+
+    <h2 class="text-center">Premium work environements</h2>
+
+    <div class="d-flex flex-column justify-content-center my-3">
+
+      <div class="row mt-3">
+        <div class="col col-2">
+          <i class="fas fa-wifi" style="font-size: 50px"></i>
+        </div>
+        <div class="col">
+          <p>The digital age is now, and fast, reliable internet is a necessity for most jobs these days. Therefore we strive to ensure that all the wrokspaces listed offer super fast fiber optice broadband included in your rental.</p>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col col-2">
+          <i class="fas fa-mug-hot" style="font-size: 50px"></i>
+        </div>
+        <div class="col">
+          <p>We know how important a good coffe is to start your day. Most of our partners offer some form of catering which is included in your rental, however if you work in a location that does not offer this, we will ensure that you get a free coffe on us!</p>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col col-2">
+          <i class="fas fa-desktop" style="font-size: 50px"></i>
+        </div>
+        <div class="col">
+          <p>We pride ourselves in offering work spaces to people from all sorts of backgrounds doing many all sorts of work. However one thing that is universally important no matter what ionudtry you work in is good screen equipment. We ensure that all our partner offer at least 1 external monitor and height adjustable office chair.</p>
+        </div>
+      </div>
+
+      <div class="row mt-5 justify-content-center">
+      <%= link_to spaces_path do %>
+        <button class="btn btn-primary" data-turbolinks="false">Book a space now</button>
+      <% end %>
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="col col-md-1"></div>
+
+  </div>
+
 </div>
