@@ -1,12 +1,13 @@
-<h3> Here are the details of your booking number <%= @booking.id %> </h3>
-<h3> Date :  </h3>
-<h3> Space name : <%= @booking.space.name %> </h3>
-<h3> Space address : <%= @booking.space.name %> </h3>
-<h3> Price : <%= @booking.space.price %> </h3>
-<h3> Number of desks : <%= @booking.space.number_of_desks %> </h3>
 
- <%= link_to "Delete this booking", booking_path(@booking), method: :delete,  data: { confirm: "Are you sure?" } %>
-<br>
-<h5> If you want to change the booking details, click here: <%= link_to 'Make a change', new_booking_path(@booking) %> </h5>
-<br>
+  <h3> Here are the details of your booking number <%= @booking.id %> </h3>
+  <h3> Date :  </h3>
+  <h3> Space name : <%= @booking.space.name %> </h3>
+  <h3> Space address : <%= @booking.space.name %> </h3>
+  <h3> Price : <%= @booking.space.price %> </h3>
+  <h3> Number of desks : <%= @booking.space.number_of_desks %> </h3>
+
+  <%= link_to "Delete this booking", booking_path(@booking), method: :delete,  data: { confirm: "Are you sure?" } %>
+  <br>
+  <h5> If you want to change the booking details, click here: <%= link_to 'Make a change', new_booking_path(@booking) %> </h5>
+ <br>
 <%= link_to 'Back to bookings list', bookings_path %>

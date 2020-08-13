@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+    
+    <%= simple_form_for [ @space, @review ] do |f| %>
+    <div class="row justify-content-center"></div>
+    <%= f.input :rating, collection: (1..5).to_a %>
+    <div class="row justify-content-center"></div>
+    <%= f.input :content %>
+    <div class="row justify-content-center"></div>
+    <%= f.submit "Submit review", class: 'btn btn-outline-secondary' %>
+  <%= link_to space_path(@space[:id]) do %>
+    <%= f.button :button, "Cancel", type: "reset", class: " btn btn-outline-secondary" %>
+  <% end %>
+
+<% end %>
+
+    </div>
+  </div>
+</div>

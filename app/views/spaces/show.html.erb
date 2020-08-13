@@ -11,6 +11,7 @@
       </div>
 
       <div class="row">
+
         <h2>Information:</h2>
       </div>
 
@@ -45,7 +46,6 @@
             <p>This office has an open door policy which means you can coem and go as you please! You may be asked to present a booking confirmation when you arrive.</p>
           </div>
         </div>
-
 
         <div class="row mt-3 align-items-center">
           <div class="col col-2">
@@ -110,6 +110,23 @@
           <%= link_to spaces_path do %>
             <button class="btn btn-outline-secondary">Back to spaces</button>
           <% end %>
+
+      </div>
+
+      <div class="row pt-5 flex-column">
+
+        <%= link_to "Add a review", new_space_review_path(@space), class: "mb-3" %>
+
+        <div class="d-felx">
+          <% @space.reviews.each do |review| %>
+            <% review.rating.to_i.times do %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+            <p><%=review.content %></p>
+            <%= link_to 'Delete', space_review_path(@space[:id], review), method: :delete %>
+            <hr>
+          <% end %>
+        </div>
 
       </div>
 
