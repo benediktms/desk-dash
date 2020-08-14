@@ -34,7 +34,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem "geocoder", "~> 1.6"
 gem "pg_search", "~> 2.3"
-gem "pundit"
+gem "pundit", "~> 2.1"
 
 group :development, :test do
   gem 'pry-byebug'
@@ -64,3 +64,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

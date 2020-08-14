@@ -4,7 +4,11 @@ class SpacePolicy < ApplicationPolicy
       scope.all
     end
 
-    def index
+    def index?
+      true
+    end
+
+    def show?
       true
     end
   end
