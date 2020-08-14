@@ -34,7 +34,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem "geocoder", "~> 1.6"
 gem "pg_search", "~> 2.3"
-gem "pundit", "~> 2.1"
+gem "pundit"
 
 group :development, :test do
   gem 'pry-byebug'

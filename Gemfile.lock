@@ -253,7 +253,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 4.1)
-  pundit (~> 2.1)
+  pundit
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
   selenium-webdriver

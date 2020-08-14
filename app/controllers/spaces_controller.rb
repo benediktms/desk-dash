@@ -10,6 +10,8 @@ class SpacesController < ApplicationController
       @spaces = Space.geocoded
     end
 
+    authorize @spaces
+
     @markers = @spaces.map do |space|
       {
         longitude: space.longitude,
@@ -23,9 +25,8 @@ class SpacesController < ApplicationController
     @space = Space.new
   end
 
-  # added by Bruno
   def show
-    params.delete :query if params[:query].present?
+    # params.delete :query if params[:query].present?
   end
 
   def create

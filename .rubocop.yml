@@ -17,7 +17,7 @@ Style/StringLiterals:
 Style/RedundantReturn:
   Enabled: true
 Style/Documentation:
-  Enabled: true
+  Enabled: false
 Style/WordArray:
   Enabled: true
 Metrics/AbcSize:
@@ -31,7 +31,7 @@ Metrics/CyclomaticComplexity:
 Style/MissingRespondToMissing:
   Enabled: true
 Style/FrozenStringLiteralComment:
-  Enabled: true
+  Enabled: false
 Layout/LineLength:
   Max: 120
 Style/EmptyMethod:

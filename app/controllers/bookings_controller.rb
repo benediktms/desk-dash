@@ -6,18 +6,19 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-    # added by Bruno
-      @booking = Booking.find(params[:id])
-    end
+  def show; end
 
   def new
     @booking = Booking.new
+    @booking.user = current_user
+    authorize @booking
   end
 
   def create
-      @booking = Booking.new(booking_params)
-        if @booking.save
+    @booking = Booking.new(booking_params)
+    authorize @booking
+
+    if @booking.save
       flash.alert = 'Booking created successfully'
       redirect_to bookings_path
     else
@@ -26,12 +27,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-    @booking = Booking.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       flash.alert = 'Booking updated successfully'
       redirect_to bookings_path
@@ -42,7 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     if @booking.destroy
       flash.notice = 'Booking deleted successfully'
       redirect_to bookings_path
@@ -58,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:user_id, :space_id, :day)
+    params.require(:booking).permit(:day, :space)
   end
 end
